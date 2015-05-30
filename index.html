@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Multimediatechnik MMT (Audio) Übung-1</title>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Multimediatechnik MMT (Audio)</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Uebung 1</a></li>
+                <li><a href="#">Uebung 2</a></li>
+                <li><a href="#">Uebung 3</a></li>
+                <li><a href="#">Uebung 4</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <a data-toggle="collapse" data-target="#collapseOne"
+                   href="#collapseOne">
+                    Aufgabe 1 - Einführung
+                </a></h3>
+
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse out">
+            <div class="panel-body">
+                Erzeuge zwei kurze Audio-Files (max. 5 s), davon eines mit Musik deiner Wahl aus dem Internet (wobei
+                sich Musik mit einer relativ hohen Dynamik, d.h. Wechsel zwischen relativ leisen und lauten Abschnitten
+                empfiehlt). Wähle eine geeignete Abtastfrequenz (begründen !) und achte auf gute Aussteuerung. Das
+                zweite Audio-File soll eine Sprachaufnahme (mit dem Headset aufgesprochen) enthalten (Übersteuerung
+                vermeiden !). Wähle hier eine Abtastfrequenz von 22 kHz, 16 bit Auflösung, mono.
+                <h3>Musik_Detail.wav</h3>
+                <audio controls="controls" src="audio/Musik_Detail.wav">
+                    Your browser does not support the HTML5 Audio element.
+                </audio>
+                <p> infile: Musik_Detail.wav <br>
+                    filelength 888980 <br>
+                    samples 443896 <br>
+                    rate 44100 <br>
+                    bits 16 <br>
+                    bytes per sample 4 <br>
+                    channels 2 </p>
+
+                <h3>Sprache_Detail.wav</h3>
+                <audio controls="controls" src="audio/Sprache_Detail.wav">
+                    Your browser does not support the HTML5 Audio element.
+                </audio>
+                <p> infile: Sprache_Detail.wav outfile: <br>
+                    filelength 221860 <br>
+                    samples 110171 <br>
+                    rate 22050 <br>
+                    bits 16 <br>
+                    bytes per sample 2 <br>
+                    channels 1 </p>
+
+                <h3>sine_hi01.wav</h3>
+                <audio controls="controls" src="audio/sine_hi01.wav">
+                    Your browser does not support the HTML5 Audio element.
+                </audio>
+                <p> infile: sine_hi01.wav outfile:<br>
+                    filelength 32036<br>
+                    samples 16000<br>
+                    rate 16000<br>
+                    bits 16<br>
+                    bytes per sample 2<br>
+                    channels 1</p>
+
+                <h3>sine_lo01.wav</h3>
+                <audio controls="controls" src="audio/sine_lo01.wav">
+                    Your browser does not support the HTML5 Audio element.
+                </audio>
+                <br>
+
+                <p> infile: sine_lo01.wav outfile:<br>
+                    filelength 32036<br>
+                    samples 16000<br>
+                    rate 16000<br>
+                    bits 16<br>
+                    bytes per sample 2<br>
+                    channels 1</p></br>
+
+                <h4>Für die Musik haben wir eine Abtastrate von 44,1 kHz genommen, damit wir alles hören können</h4>
+                <table class="table table-condensed">
+                    <thead>
+                    <tr>
+                        <th>filelength</th>
+                        <td>Beschreibt die Dateigröße in Byte</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th>samples</th>
+                        <td>Abtastfrequenz - entspricht der Dauer</td>
+                    </tr>
+                    <tr>
+                        <th>rate</th>
+                        <td>Die Abtastrate in Hz</td>
+                    </tr>
+                    <tr>
+                        <th>bits</th>
+                        <td>Die Größe der Frames für das Signal</td>
+                    </tr>
+                    <tr>
+                        <th>bytes per sample</th>
+                        <td>Bestimmt wie viele Bits pro Kanal vorhanden sind</td>
+                    </tr>
+                    <tr>
+                        <th>channel</th>
+                        <td>Kanäle für Audio: 2 für Stereo, 1 für Mono</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <a data-toggle="collapse" data-target="#collapseTwo"
+                   href="#collapseTwo">
+                    Aufgabe 2 - Aliasing
+                </a></h3>
+
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse out">
+            <div class="panel-body">
+                Modifiziere wave_io dahingehend, dass die Samples in der WAV-Datei in eine (lesbare) ASCII-Datei
+                geschrieben werden. Lies die von mir geschickten Dateien (Sampling-Frequenz: 16 kHz) ein und bestimme
+                aus den resultierenden Zahlenfolgen in der ASCII-Datei die Frequenz der Sinus-Schwingungen (Begründen
+                und jeweils eine Periode für das Protokoll abspeichern).
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <div>
+                                <ul class="nav navbar-nav">
+                                    <li class="active"><a data-toggle="collapse" data-target="#collapse2_1" href="#collapse2_1">2.1 WAV to ASCII</a></li>
+                                    <li><a href="#">2.2</a></li>
+                                    <li><a href="#">2.3</a></li>
+                                    <li><a href="#">2.4</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <!--<img src="img/sine_hi01.png">-->
+                <!--<img src="img/sine_lo01.png">-->
+                <div class="row">
+                    <code class="col-sm-5">
+                        <pre>
+Abtastung sine_lo01.wav
+
+4756
+12665
+16305
+14449
+7723
+-1606
+-10394
+-15679
+-15679
+-10394
+-1606
+7723
+14449
+16305
+12665
+4756
+
+-4756
+-12665
+-16305
+-14449
+-7723
+1606
+10394
+15679
+15679
+10394
+1606
+-7723
+-14449
+-16305
+-12665
+-4756
+                        </pre>
+                    </code>
+                    <code class="col-sm-5">
+                        <pre>
+Abtastung sine_hi01.wav
+
+12665
+7723
+-15679
+-1606
+16305
+-4756
+-14449
+10394
+10394
+-14449
+-4756
+16305
+-1606
+-15679
+7723
+12665
+
+-12665
+-7723
+15679
+1606
+-16305
+4756
+14449
+-10394
+-10394
+14449
+4756
+-16305
+1606
+15679
+-7723
+-12665
+                        </pre>
+                    </code>
+                </div>
+                <img src="img/sine_lo01_gram.jpg">
+                <img src="img/sine_hi01_gram.jpg">
+
+            </div>
+        </div>
+
+</body>
+</html>
