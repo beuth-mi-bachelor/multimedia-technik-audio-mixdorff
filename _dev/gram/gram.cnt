@@ -1,0 +1,46 @@
+:Base gram.hlp>gram
+:Title Spectrogram
+1 Introduction
+2 Principles of Operation=INTRO_1
+2 The Spectrogram Display=INTRO_2
+2 The Scope display=INTRO_3
+2 Linear and Log Frequency Scales=INTRO_4
+2 Signal Readouts=INTRO_5
+2 Display Markers=INTRO_6
+2 Display Pause=INTRO_7
+2 To Adjust or Freeze Parameters=INTRO_8
+2 Program Startup and Initialization=INTRO_9
+1 Analyzing Files
+2 Analyze File, Dialog Box=AF_1
+2 Analyze File, Sample Characteristics=AF_2
+2 Analyze File, Frequency Analysis=AF_3
+2 Analyze File, Display Characteristics=AF_4
+1 Scanning Files
+2 Scan File Dialog Box=SF_1
+2 Scan File, Sample Characteristics=SF_2
+2 Scan File, Frequency Analysis=SF_3
+2 Scan File, Display Characteristics=SF_4
+2 Scan File, Analysis at Stop=SF_5
+1 Audio Scanning and Recording
+2 Scan Input Dialog Box=SI_1
+2 Scan Input, Sample Characteristics=SI_2
+2 Scan Input, Frequency Analysis=SI_3
+2 Scan Input, Display Characteristics=SI_4
+2 Scan Input, Record Enable=SI_5
+1 Modifying, Playing, and Saving Spectrograms
+2 Color Controls=OTHER_1
+2 Display Calibration=OTHER_2
+2 Modifying Spectrograms=OTHER_3
+2 Single Spectrum Plot=OTHER_4
+2 Spectrogram Playback=OTHER_5
+2 Simultaneous Operation=OTHER_6
+2 Saving Audio and Image Files=OTHER_7
+2 Printing=OTHER_8
+2 Data Logging=OTHER_9
+1 Miscellaneous
+2 System Requirements and Installation=OTHER_10
+2 Performance Limitations=OTHER_11
+2 Memory Usage=OTHER_12
+2 Sound Card Initialization=OTHER_13
+2 Problem Reporting and Program Updates=OTHER_14
+2 Credits=OTHER_15
