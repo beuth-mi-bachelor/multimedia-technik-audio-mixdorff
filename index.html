@@ -177,10 +177,10 @@
         <div class="navbar-header">
             <div>
                 <ul class="nav navbar-nav">
-                    <li><a href="#collapse2_1">2.1 WAV to ASCII</a></li>
-                    <li><a href="#collapse2_2">2.2 Abtasttheorem</a></li>
-                    <li><a href="#collapse2_3">2.3 Down-Sampling</a></li>
-                    <li><a href="#collapse2_4">2.4 Down-Sampling</a></li>
+                    <li><a href="#collapse2_1">2.1</a></li>
+                    <li><a href="#collapse2_2">2.2</a></li>
+                    <li><a href="#collapse2_3">2.3</a></li>
+                    <li><a href="#collapse2_4">2.4</a></li>
 
                 </ul>
             </div>
@@ -425,6 +425,7 @@
 </div>
 <div id="collapseThree" class="panel-collapse collapse">
     <div id="accordion3" class="container panel-group">
+        <div class="panel panel-default">
 
         <div class="panel-body">
             <nav class="navbar navbar-default">
@@ -432,14 +433,10 @@
                     <div class="navbar-header">
                         <div>
                             <ul class="nav navbar-nav">
-                                <li><a data-toggle="collapse" data-parent="#accordion3" data-target="#collapse3_1"
-                                       href="#collapse3_1">3.1</a></li>
-                                <li><a data-toggle="collapse" data-parent="#accordion3" data-target="#collapse3_2"
-                                       href="#collapse3_2">3.2</a></li>
-                                <li><a data-toggle="collapse" data-parent="#accordion3" data-target="#collapse3_3"
-                                       href="#collapse3_3">3.3</a></li>
-                                <li><a data-toggle="collapse" data-parent="#accordion3" data-target="#collapse3_4"
-                                       href="#collapse3_4">3.4</a></li>
+                                <li><a href="#collapse3_1">3.1</a></li>
+                                <li><a href="#collapse3_2">3.2</a></li>
+                                <li><a href="#collapse3_3">3.3</a></li>
+                                <li><a href="#collapse3_4">3.4</a></li>
 
                             </ul>
                         </div>
@@ -511,15 +508,49 @@
                 <h2>Aufgabe 3.4</h2>
                 <h4>Code-Anpassungen</h4>
                     <pre>
-    for (i = 0; i < (n_wave/2); i++) {
-        wave[i] = wave[i*2];
+    const int bit=8;
+    short *new_wave;
+
+    new_wave = (short*)malloc(n_wave*sizeof(short));
+
+    for(i=0; i < n_wave; i++){
+        new_wave[i] = wave[i];
+        wave[i] /= pow(2.0,bit);
+        wave[i] *= pow(2.0,bit);
+        wave[i] -= new_wave[i];
+        wave[i] *= pow(2.0, 16-bit-1);
     }
-    freq_in /= 2;
-    n_wave /= 2;
                     </pre>
+                <h3>Musik_Detail_rauschen-1bit.wav</h3>
+                <p>Musik: Reduktion um 1 Bit</p>
+                <audio controls="controls" src="audio/Musik_Detail_rauschen-1bit.wav">
+                    Your browser does not support the HTML5 Audio element.
+                </audio>
+                <img src="img/Musik_Detail_rauschen-1bit_gram.jpg">
+                <h3>Musik_Detail_rauschen-256.wav</h3>
+                <p>Musik: Reduktion um 8 Bit</p>
+                <audio controls="controls" src="audio/Musik_Detail_rauschen-256.wav">
+                    Your browser does not support the HTML5 Audio element.
+                </audio>
+                <img src="img/Musik_Detail_rauschen-256_gram.jpg">
+
+                <h3>Sprache_Detail_rauschen-1bit.wav</h3>
+                <p>Sprache: Reduktion um 1 Bit</p>
+                <audio controls="controls" src="audio/Sprache_Detail_rauschen-1bit.wav">
+                    Your browser does not support the HTML5 Audio element.
+                </audio>
+                <img src="img/Sprache_Detail_rauschen-1bit_gram.jpg">
+                <h3>Sprache_Detail_rauschen-256.wav</h3>
+                <p>Sprache: Reduktion um 6 Bit</p>
+                <audio controls="controls" src="audio/Sprache_Detail_rauschen-64.wav">
+                    Your browser does not support the HTML5 Audio element.
+                </audio>
+                <img src="img/Sprache_Detail_rauschen-64_gram.jpg">
             </div>
         </div>
     </div>
+    </div>
+
 </div>
 </div>
 </div>
