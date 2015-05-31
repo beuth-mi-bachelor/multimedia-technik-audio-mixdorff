@@ -28,181 +28,181 @@
 </nav>
 
 <div id="accordion" class="container panel-group">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne"
-                   href="#collapseOne">
-                    Aufgabe 1 - Einführung
-                </a></h3>
+<div class="panel panel-default">
+<div class="panel-heading">
+    <h3 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne"
+           href="#collapseOne">
+            Aufgabe 1 - Einführung
+        </a></h3>
 
+</div>
+<div id="collapseOne" class="panel-collapse collapse">
+    <div class="panel-body">
+        <h2>Aufgabe 1</h2>
+        <em>
+            Erzeuge zwei kurze Audio-Files (max. 5 s), davon eines mit Musik deiner Wahl aus dem Internet (wobei
+            sich Musik mit einer relativ hohen Dynamik, d.h. Wechsel zwischen relativ leisen und lauten
+            Abschnitten empfiehlt). Wähle eine geeignete Abtastfrequenz (begründen !) und achte auf gute
+            Aussteuerung. Das
+            zweite Audio-File soll eine Sprachaufnahme (mit dem Headset aufgesprochen) enthalten (Übersteuerung
+            vermeiden !). Wähle hier eine Abtastfrequenz von 22 kHz, 16 bit Auflösung, mono.
+            Die Einstellungen wie Abtastrate, Bitzahl und Kanalzahl können im Wavestudio Samplitude vorgenommen
+            werden. Die Eingangsquelle (wahlweise Audio-CD oder Mikrofon) kann im Windows-Mixer 'Aufnahme'
+            eingestellt werden. Benenne die Dateien "Musik_NameArbeitsgruppe.wav" und
+            Sprache_NameArbeitsgruppe.wav". Schick mir die beiden WAV-Dateien unter Nennung deiner Arbeitsgruppe
+            per Mail. In den folgenden Übungen wirst du diese Dateien oft als Ursprungssignale verwenden.
+            Sollten sie verloren gehen, kannst du sie notfalls wieder von mir erhalten. Darauf werde ich dir
+            zwei WAV-Dateien mit Testsignalen zusenden, die du bei den folgenden Aufgabenpunkten benötigst,
+            sine_hiXX.wav und sine_loXX.wav. Nun lies die Musik- und die Sprachdatei mit wave_io ein und erkläre
+            die Angaben im Header ! Wie hoch ist die Bitrate für die beiden Dateien?
+        </em>
+
+        <div class="col-sm-6">
+            <h3>Musik_Detail.wav</h3>
+            <audio controls="controls" src="audio/Musik_Detail.wav">
+                Your browser does not support the HTML5 Audio element.
+            </audio>
+            <blockquote>
+                <p> infile: Musik_Detail.wav <br>
+                    filelength 888980 <br>
+                    samples 443896 <br>
+                    rate 44100 <br>
+                    bits 16 <br>
+                    bytes per sample 4 <br>
+                    channels 2 </p>
+            </blockquote>
         </div>
-        <div id="collapseOne" class="panel-collapse collapse in">
-            <div class="panel-body">
-                <h2>Aufgabe 1</h2>
-                <em>
-                    Erzeuge zwei kurze Audio-Files (max. 5 s), davon eines mit Musik deiner Wahl aus dem Internet (wobei
-                    sich Musik mit einer relativ hohen Dynamik, d.h. Wechsel zwischen relativ leisen und lauten
-                    Abschnitten empfiehlt). Wähle eine geeignete Abtastfrequenz (begründen !) und achte auf gute
-                    Aussteuerung. Das
-                    zweite Audio-File soll eine Sprachaufnahme (mit dem Headset aufgesprochen) enthalten (Übersteuerung
-                    vermeiden !). Wähle hier eine Abtastfrequenz von 22 kHz, 16 bit Auflösung, mono.
-                    Die Einstellungen wie Abtastrate, Bitzahl und Kanalzahl können im Wavestudio Samplitude vorgenommen
-                    werden. Die Eingangsquelle (wahlweise Audio-CD oder Mikrofon) kann im Windows-Mixer 'Aufnahme'
-                    eingestellt werden. Benenne die Dateien "Musik_NameArbeitsgruppe.wav" und
-                    Sprache_NameArbeitsgruppe.wav". Schick mir die beiden WAV-Dateien unter Nennung deiner Arbeitsgruppe
-                    per Mail. In den folgenden Übungen wirst du diese Dateien oft als Ursprungssignale verwenden.
-                    Sollten sie verloren gehen, kannst du sie notfalls wieder von mir erhalten. Darauf werde ich dir
-                    zwei WAV-Dateien mit Testsignalen zusenden, die du bei den folgenden Aufgabenpunkten benötigst,
-                    sine_hiXX.wav und sine_loXX.wav. Nun lies die Musik- und die Sprachdatei mit wave_io ein und erkläre
-                    die Angaben im Header ! Wie hoch ist die Bitrate für die beiden Dateien?
-                </em>
+        <div class="col-sm-6">
+            <h3>Sprache_Detail.wav</h3>
+            <audio controls="controls" src="audio/Sprache_Detail.wav">
+                Your browser does not support the HTML5 Audio element.
+            </audio>
+            <blockquote>
+                <p> infile: Sprache_Detail.wav outfile: <br>
+                    filelength 221860 <br>
+                    samples 110171 <br>
+                    rate 22050 <br>
+                    bits 16 <br>
+                    bytes per sample 2 <br>
+                    channels 1 </p>
+            </blockquote>
+        </div>
+        <div class="col-sm-6">
+            <h3>sine_hi01.wav</h3>
+            <audio controls="controls" src="audio/sine_hi01.wav">
+                Your browser does not support the HTML5 Audio element.
+            </audio>
+            <blockquote>
+                <p> infile: sine_hi01.wav outfile:<br>
+                    filelength 32036<br>
+                    samples 16000<br>
+                    rate 16000<br>
+                    bits 16<br>
+                    bytes per sample 2<br>
+                    channels 1</p>
+            </blockquote>
+        </div>
+        <div class="col-sm-6">
+            <h3>sine_lo01.wav</h3>
+            <audio controls="controls" src="audio/sine_lo01.wav">
+                Your browser does not support the HTML5 Audio element.
+            </audio>
+            <blockquote>
+                <p> infile: sine_lo01.wav outfile:<br>
+                    filelength 32036<br>
+                    samples 16000<br>
+                    rate 16000<br>
+                    bits 16<br>
+                    bytes per sample 2<br>
+                    channels 1</p>
+            </blockquote>
+        </div>
+        <h3>Bitraten der Dateien</h3>
 
-                <div class="col-sm-6">
-                    <h3>Musik_Detail.wav</h3>
-                    <audio controls="controls" src="audio/Musik_Detail.wav">
-                        Your browser does not support the HTML5 Audio element.
-                    </audio>
-                    <blockquote>
-                        <p> infile: Musik_Detail.wav <br>
-                            filelength 888980 <br>
-                            samples 443896 <br>
-                            rate 44100 <br>
-                            bits 16 <br>
-                            bytes per sample 4 <br>
-                            channels 2 </p>
-                    </blockquote>
-                </div>
-                <div class="col-sm-6">
-                    <h3>Sprache_Detail.wav</h3>
-                    <audio controls="controls" src="audio/Sprache_Detail.wav">
-                        Your browser does not support the HTML5 Audio element.
-                    </audio>
-                    <blockquote>
-                        <p> infile: Sprache_Detail.wav outfile: <br>
-                            filelength 221860 <br>
-                            samples 110171 <br>
-                            rate 22050 <br>
-                            bits 16 <br>
-                            bytes per sample 2 <br>
-                            channels 1 </p>
-                    </blockquote>
-                </div>
-                <div class="col-sm-6">
-                    <h3>sine_hi01.wav</h3>
-                    <audio controls="controls" src="audio/sine_hi01.wav">
-                        Your browser does not support the HTML5 Audio element.
-                    </audio>
-                    <blockquote>
-                        <p> infile: sine_hi01.wav outfile:<br>
-                            filelength 32036<br>
-                            samples 16000<br>
-                            rate 16000<br>
-                            bits 16<br>
-                            bytes per sample 2<br>
-                            channels 1</p>
-                    </blockquote>
-                </div>
-                <div class="col-sm-6">
-                    <h3>sine_lo01.wav</h3>
-                    <audio controls="controls" src="audio/sine_lo01.wav">
-                        Your browser does not support the HTML5 Audio element.
-                    </audio>
-                    <blockquote>
-                        <p> infile: sine_lo01.wav outfile:<br>
-                            filelength 32036<br>
-                            samples 16000<br>
-                            rate 16000<br>
-                            bits 16<br>
-                            bytes per sample 2<br>
-                            channels 1</p>
-                    </blockquote>
-                </div>
-                <h3>Bitraten der Dateien</h3>
+        <p>Für die Musik haben wir eine Abtastrate von 44,1 kHz genommen, damit wir alle Feinheiten hören
+            können.</p>
 
-                <p>Für die Musik haben wir eine Abtastrate von 44,1 kHz genommen, damit wir alle Feinheiten hören
-                    können.</p>
+        <p>Bei der Sprache reichte eine Abtastrate von 11 kHz aus.</p>
 
-                <p>Bei der Sprache reichte eine Abtastrate von 11 kHz aus.</p>
+        <h3>Erklärungen der Angaben im Header</h3>
+        <table class="table table-condensed">
+            <thead>
+            <tr>
+                <th>Attributname</th>
+                <th>Beschreibung</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>filelength</td>
+                <td>Beschreibt die Dateigröße in Byte</td>
+            </tr>
+            <tr>
+                <td>samples</td>
+                <td>Anzahl der Samples</td>
+            </tr>
+            <tr>
+                <td>rate</td>
+                <td>Abtastfrequenz</td>
+            </tr>
+            <tr>
+                <td>bits</td>
+                <td>Auflösung</td>
+            </tr>
+            <tr>
+                <td>bytes per sample</td>
+                <td>Bestimmt wie viele Bits pro Kanal vorhanden sind</td>
+            </tr>
+            <tr>
+                <td>channel</td>
+                <td>Kanäle für Audio: 2 für Stereo, 1 für Mono</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="panel-heading">
+    <h3 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo"
+           href="#collapseTwo">
+            Aufgabe 2 - Aliasing
+        </a></h3>
 
-                <h3>Erklärungen der Angaben im Header</h3>
-                <table class="table table-condensed">
-                    <thead>
-                    <tr>
-                        <th>Attributname</th>
-                        <th>Beschreibung</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>filelength</td>
-                        <td>Beschreibt die Dateigröße in Byte</td>
-                    </tr>
-                    <tr>
-                        <td>samples</td>
-                        <td>Anzahl der Samples</td>
-                    </tr>
-                    <tr>
-                        <td>rate</td>
-                        <td>Abtastfrequenz</td>
-                    </tr>
-                    <tr>
-                        <td>bits</td>
-                        <td>Auflösung</td>
-                    </tr>
-                    <tr>
-                        <td>bytes per sample</td>
-                        <td>Bestimmt wie viele Bits pro Kanal vorhanden sind</td>
-                    </tr>
-                    <tr>
-                        <td>channel</td>
-                        <td>Kanäle für Audio: 2 für Stereo, 1 für Mono</td>
-                    </tr>
-                    </tbody>
-                </table>
+</div>
+<div id="collapseTwo" class="panel-collapse collapse">
+<div class="panel-body">
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div>
+                <ul class="nav navbar-nav">
+                    <li><a href="#collapse2_1">2.1 WAV to ASCII</a></li>
+                    <li><a href="#collapse2_2">2.2 Abtasttheorem</a></li>
+                    <li><a href="#collapse2_3">2.3 Down-Sampling</a></li>
+                    <li><a href="#collapse2_4">2.4 Down-Sampling</a></li>
+
+                </ul>
             </div>
         </div>
-        <div class="panel-heading">
-            <h3 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo"
-                   href="#collapseTwo">
-                    Aufgabe 2 - Aliasing
-                </a></h3>
+    </div>
+</nav>
+<div id="collapse2_1">
+    <h2>Aufgabe 2.1</h2>
+    <em>
+        Modifiziere wave_io dahingehend, dass die Samples in der WAV-Datei in eine (lesbare)
+        ASCII-Datei
+        geschrieben werden. Lies die von mir geschickten Dateien (Sampling-Frequenz: 16 kHz) ein und
+        bestimme
+        aus den resultierenden Zahlenfolgen in der ASCII-Datei die Frequenz der Sinus-Schwingungen
+        (Begründen
+        und jeweils eine Periode für das Protokoll abspeichern).Überprüfe Deine Schätzung mit dem
+        Spektralanalyse-Tool GRAM.
+    </em>
 
-        </div>
-        <div id="collapseTwo" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <nav class="navbar navbar-default">
-                        <div class="container-fluid">
-                            <div class="navbar-header">
-                                <div>
-                                    <ul class="nav navbar-nav">
-                                        <li><a href="#collapse2_1">2.1 WAV to ASCII</a></li>
-                                        <li><a href="#collapse2_2">2.2 Abtasttheorem</a></li>
-                                        <li><a href="#collapse2_3">2.3 Down-Sampling</a></li>
-                                        <li><a href="#collapse2_4">2.4 Down-Sampling</a></li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </nav>
-                    <div id="collapse2_1">
-                        <h2>Aufgabe 2.1</h2>
-                        <em>
-                            Modifiziere wave_io dahingehend, dass die Samples in der WAV-Datei in eine (lesbare)
-                            ASCII-Datei
-                            geschrieben werden. Lies die von mir geschickten Dateien (Sampling-Frequenz: 16 kHz) ein und
-                            bestimme
-                            aus den resultierenden Zahlenfolgen in der ASCII-Datei die Frequenz der Sinus-Schwingungen
-                            (Begründen
-                            und jeweils eine Periode für das Protokoll abspeichern).Überprüfe Deine Schätzung mit dem
-                            Spektralanalyse-Tool GRAM.
-                        </em>
-
-                        <div class="panel-body">
-                            <div class="row">
-                                <h4>Code-Anpassungen</h4>
+    <div class="panel-body">
+        <div class="row">
+            <h4>Code-Anpassungen</h4>
                     <pre>
     FILE *prt;
     int i;
@@ -215,11 +215,11 @@
 
     fclose(prt);
                     </pre>
-                                <h4>Protokoll prt.txt</h4>
+            <h4>Protokoll prt.txt</h4>
 
-                                <div class="col-sm-12">
-                                    <div class="col-sm-6">
-                                        <h5>Abtastung sine_lo01.wav</h5>
+            <div class="col-sm-12">
+                <div class="col-sm-6">
+                    <h5>Abtastung sine_lo01.wav</h5>
                         <pre>
 4756
 12665
@@ -255,9 +255,9 @@
 -12665
 -4756
                         </pre>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <h5>Abtastung sine_hi01.wav</h5>
+                </div>
+                <div class="col-sm-6">
+                    <h5>Abtastung sine_hi01.wav</h5>
                         <pre>
 12665
 7723
@@ -293,74 +293,92 @@
 -7723
 -12665
                         </pre>
-                                    </div>
-                                </div>
-                                <h4>sine_lo01</h4>
-                                <img src="img/sine_lo01_gram.jpg">
-                                <h4>sine_hi01</h4>
-                                <img src="img/sine_hi01_gram.jpg">
-                            </div>
-                        </div>
-                    </div>
-                    <div id="collapse2_2">
-                        <h2>Aufgabe 2.2</h2>
-                        <em>
-                            Bei der zeitlichen Diskretisierung eines Analogsignals muß das sogenannte Abtasttheorem
-                            eingehalten werden. Wie lautet es und wie läßt sich der Grenzfall, für den es gerade noch
-                            gilt, illustrieren (Zeichnung !)?
-                        </em>
+                </div>
+            </div>
+            <h4>sine_lo01</h4>
+            <img src="img/sine_lo01_gram.jpg">
 
-                        <div class="panel-body">
-                            <div class="row">
-                                <p>
-                                    Damit das Signal später wieder aus den Abtastwerten rekonstruiert werden kann,
-                                    muß gewährleistet sein, daß die Abtastfrequenz f<sub>a</sub> mehr als doppelt so
-                                    hoch gewählt
-                                    wird wie die im abzutastenden Signal vorhandene höchste Frequenz: f<sub>a</sub> > 2
-                                    * f<sub>max</sub>
-                                </p>
+            <p>
+                Es finden 3 Nulldurchgänge statt. Das bedeutet in 16 Samplewerten befinden sich 1,5 Schwingungen.
+                16 Samplewerte haben eine Dauer von 16000Hz / 16 , also 1/1000 Sekunde.
+                In 1/1000 Sekunde finden 1,5 Schwingungen statt, das bedeutet eine Schwingung dauert 1/1000 * 1,5 =
+                1/1500 Sekunde. Das entspricht 1500Hz oder aber 1,5 kHz.
+            </p>
+            </br>
+            <h4>sine_hi01</h4>
+            <img src="img/sine_hi01_gram.jpg">
 
-                                <p>
-                                    Wird dieses sogenannte Abtasttheorem nicht eingehalten, so kommt es zu
-                                    irreparablen Fehlern, sogenannten Faltungsverzerrungen.
-                                </p>
-                                <figure>
-                                    <img src="img/grenzfall.jpg" alt="Grenzfall"/>
-                                    <em class="text-muted">Quelle:
-                                        http://public.beuth-hochschule.de/~mixdorff/mmt1/files/schwingungslehre.pdf</em>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="collapse2_3">
+            <p>
+                Es finden 9 Nulldurchgänge statt. Das bedeutet in 16 Samplewerten befinden sich 4,5 Schwingungen.
+                16 Samplewerte haben eine Dauer von 16000Hz / 16 , also 1/1000 Sekunde.
+                In 1/1000 Sekunde finden 4,5 Schwingungen statt, das bedeutet eine Schwingung dauert 1/1000 * 4,5 =
+                1/4500 Sekunde. Das entspricht 4500Hz oder aber 4,5 kHz.
+            </p>
+            </br>
+        </div>
+    </div>
+</div>
+<div id="collapse2_2">
+    <h2>Aufgabe 2.2</h2>
+    <em>
+        Bei der zeitlichen Diskretisierung eines Analogsignals muß das sogenannte Abtasttheorem
+        eingehalten werden. Wie lautet es und wie läßt sich der Grenzfall, für den es gerade noch
+        gilt, illustrieren (Zeichnung !)?
+    </em>
 
-                        <h2>Aufgabe 2.3</h2>
-                        <em>
-                            Bei herkömmlichen Soundkarten tritt systembedingt kein Aliasing auf, weil das Audiosignal
-                            stets geeignet vorbehandelt wird (wie ?). Mit einem kleinen Trick läßt sich Aliasing jedoch
-                            nachweisen. Diese auch als Down-Sampling bekannte Methode besteht darin, dass man bei einer
-                            WAV-Datei z.B. jeden zweiten Abtastwert wegwirft. Man erhält so eine Wellenform, die genau
-                            die Hälfte der ursprünglichen Abtastfrequenz aufweist. Wenn man das Signal nicht vorher
-                            bandbegrenzt hat, können Aliasing-Verzerrungen hörbar werden.
-                        </em>
-                        <p>
-                            Bei herkömmlichen Soundkarten wird das Signal durch einen Tiefpassfilter bearbeitet, sodass alle Frequenzen > f(max)/2 abgetrennt werden.
-                        </p>
-                    </div>
-                    <div id="collapse2_4">
+    <div class="panel-body">
+        <div class="row">
+            <p>
+                Damit das Signal später wieder aus den Abtastwerten rekonstruiert werden kann,
+                muß gewährleistet sein, daß die Abtastfrequenz f<sub>a</sub> mehr als doppelt so
+                hoch gewählt
+                wird wie die im abzutastenden Signal vorhandene höchste Frequenz: f<sub>a</sub> > 2
+                * f<sub>max</sub>
+            </p>
 
-                        <h2>Aufgabe 2.4</h2>
-                        <em>
-                            Modifiziere wave_io dahingehend, dass vom eingelesenen Signal jeder zweite Abtastwert
-                            verworfen wird und das resultierende Signal abgespeichert wird. Der Header muß natürlich
-                            entsprechend verändert werden! Wende das resultierende Programm zunächst auf 'sine_lo.wav'
-                            und 'sine_hi.wav' an. Welche Frequenzen erscheinen nach dem Down-Sampling (Spektrogramm und
-                            WAVs ins Protokoll !)? Was würde passieren, wenn man geeignet bandbegrenzen würde?
-                        </em>
+            <p>
+                Wird dieses sogenannte Abtasttheorem nicht eingehalten, so kommt es zu
+                irreparablen Fehlern, sogenannten Faltungsverzerrungen.
+            </p>
+            <figure>
+                <img src="img/grenzfall.jpg" alt="Grenzfall"/>
+                <em class="text-muted">Quelle:
+                    http://public.beuth-hochschule.de/~mixdorff/mmt1/files/schwingungslehre.pdf</em>
+            </figure>
+        </div>
+    </div>
+</div>
+<div id="collapse2_3">
 
-                        <div class="panel-body">
-                            <div class="row">
-                                <h4>Code-Anpassungen</h4>
+    <h2>Aufgabe 2.3</h2>
+    <em>
+        Bei herkömmlichen Soundkarten tritt systembedingt kein Aliasing auf, weil das Audiosignal
+        stets geeignet vorbehandelt wird (wie ?). Mit einem kleinen Trick läßt sich Aliasing jedoch
+        nachweisen. Diese auch als Down-Sampling bekannte Methode besteht darin, dass man bei einer
+        WAV-Datei z.B. jeden zweiten Abtastwert wegwirft. Man erhält so eine Wellenform, die genau
+        die Hälfte der ursprünglichen Abtastfrequenz aufweist. Wenn man das Signal nicht vorher
+        bandbegrenzt hat, können Aliasing-Verzerrungen hörbar werden.
+    </em>
+
+    <p>
+        Bei herkömmlichen Soundkarten wird das Signal durch einen Tiefpassfilter bearbeitet, sodass alle Frequenzen >
+        f(max)/2 abgetrennt werden.
+    </p>
+</div>
+<div id="collapse2_4">
+
+    <h2>Aufgabe 2.4</h2>
+    <em>
+        Modifiziere wave_io dahingehend, dass vom eingelesenen Signal jeder zweite Abtastwert
+        verworfen wird und das resultierende Signal abgespeichert wird. Der Header muß natürlich
+        entsprechend verändert werden! Wende das resultierende Programm zunächst auf 'sine_lo.wav'
+        und 'sine_hi.wav' an. Welche Frequenzen erscheinen nach dem Down-Sampling (Spektrogramm und
+        WAVs ins Protokoll !)? Was würde passieren, wenn man geeignet bandbegrenzen würde?
+    </em>
+
+    <div class="panel-body">
+        <div class="row">
+            <h4>Code-Anpassungen</h4>
                     <pre>
     for (i = 0; i < (n_wave/2); i++) {
         wave[i] = wave[i*2];
@@ -368,39 +386,142 @@
     freq_in /= 2;
     n_wave /= 2;
                     </pre>
-                                <div class="col-sm-6">
-                                    <h3>sine_lo01_down.wav</h3>
-                                    <audio controls="controls" src="audio/sine_lo01_down.wav">
-                                        Your browser does not support the HTML5 Audio element.
-                                    </audio>
-                                    <img src="img/sine_lo01_down_gram.jpg">
-                                </div>
-                                <div class="col-sm-6">
-                                    <h3>sine_hi01_down.wav</h3>
-                                    <audio controls="controls" src="audio/sine_hi01_down.wav">
-                                        Your browser does not support the HTML5 Audio element.
-                                    </audio>
-                                    <img src="img/sine_hi01_down_gram.jpg">
-                                </div>
-                                <h4>sine_lo01_down</h4>
-                                <img src="img/sine_lo01_down_gram.jpg">
-                                <h4>sine_hi01_down</h4>
-                                <img src="img/sine_hi01_down_gram.jpg">
+            <div class="col-sm-6">
+                <h3>sine_lo01_down.wav</h3>
+                <audio controls="controls" src="audio/sine_lo01_down.wav">
+                    Your browser does not support the HTML5 Audio element.
+                </audio>
+            </div>
+            <img src="img/sine_hi01_down_gram.jpg">
 
-                                <p>
-                                    Wie man am Spektogramm erkennen kann, ändert sich für sine_lo01 nichts. Die Frequenz
-                                    bleibt gleich bei 1,5 kHz. Das Abtasttheorem wird eingehalten.
-                                    <br>
-                                    Die Datei sine_hi01 verliert einen kleinen Frequenzbereich und ist nach dem
-                                    Downsampling bei 3,5 kHz und nicht mehr bei den bisherigen 4,5 kHz. Es treten
-                                    Faltungsverzerrungen auf.
-                                </p>
-                            </div>
+            <div class="col-sm-6">
+                <h3>sine_hi01_down.wav</h3>
+                <audio controls="controls" src="audio/sine_hi01_down.wav">
+                    Your browser does not support the HTML5 Audio element.
+                </audio>
+            </div>
+            <img src="img/sine_lo01_down_gram.jpg">
+
+            <p>
+                Wie man am Spektogramm erkennen kann, ändert sich für sine_lo01 nichts. Die Frequenz
+                bleibt gleich bei 1,5 kHz. Das Abtasttheorem wird eingehalten, da die Ausgangsfrequenz schon niedrig
+                genug ist.
+                <br>
+                Die Datei sine_hi01 verliert einen kleinen Frequenzbereich und ist nach dem
+                Downsampling bei 3,5 kHz und nicht mehr bei den bisherigen 4,5 kHz. Es treten
+                Faltungsverzerrungen auf.
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="panel-heading">
+    <h3 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree"
+           href="#collapseThree">
+            Aufgabe 3 - Bitreduzierung
+        </a></h3>
+</div>
+<div id="collapseThree" class="panel-collapse collapse">
+    <div id="accordion3" class="container panel-group">
+
+        <div class="panel-body">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <div>
+                            <ul class="nav navbar-nav">
+                                <li><a data-toggle="collapse" data-parent="#accordion3" data-target="#collapse3_1"
+                                       href="#collapse3_1">3.1</a></li>
+                                <li><a data-toggle="collapse" data-parent="#accordion3" data-target="#collapse3_2"
+                                       href="#collapse3_2">3.2</a></li>
+                                <li><a data-toggle="collapse" data-parent="#accordion3" data-target="#collapse3_3"
+                                       href="#collapse3_3">3.3</a></li>
+                                <li><a data-toggle="collapse" data-parent="#accordion3" data-target="#collapse3_4"
+                                       href="#collapse3_4">3.4</a></li>
+
+                            </ul>
                         </div>
                     </div>
+                </div>
+            </nav>
+            <div id="collapse3_1">
+                <h2>Aufgabe 3.1</h2>
+                <em>
+                    Die herkömmlichen PC-Soundkarten arbeiten meist entweder mit 16 oder 8 bit-Auflösung. Wie groß ist
+                    die Anzahl der bei diesen beiden Werten darstellbaren Amplitudenwerten?
+                </em>
+
+                <p>
+                    8 bit entspricht 2<sup>8</sup> Amplitudenwerten = 256 Amplitudenwerte<br/>
+                    16 bit entspricht 2<sup>16</sup> Amplitudenwerten = 65536 Amplitudenwerte
+                </p>
+            </div>
+            <div id="collapse3_2">
+                <h2>Aufgabe 3.2</h2>
+                <em>
+                    Wir wollen nun wave_io so modifizieren, dass wir die Bitzahl reduzieren können. Dazu können wir z.B.
+                    alle Samples durch eine Potenz von 2 teilen (Integer-Division ohne Rest). Damit das resultierende
+                    Signal nicht leiser wird als das Original, kompensieren wir die Operation durch Multiplikation mit
+                    derselben Zweierpotenz. Zu beachten: Der Datentyp hat nach wie vor 16 bit!
+                </em>
+                <h4>Code-Anpassungen</h4>
+
+  <pre>
+  read_wave(&wave, &n_wave, &freq_in, &bits_in, in_name, &header);
+  for(i=0; i < n_wave; i++) {
+	wave[i] /= pow(2,1);
+	wave[i] *= pow(2,1);
+  }
+  </pre>
+            </div>
+            <div id="collapse3_3">
+                <h2>Aufgabe 3.3</h2>
+                <em>
+                    Mit dem entstandenen Programm verändern wir die in Aufgabe 1 erzeugten Wave-Dateien. Ab welcher
+                    Bitzahl tritt bei Musik/Sprache eine hörbare/deutliche Verschlechterung der Qualität ein? Bei
+                    wieviel Bit ist das Sprachsignal noch verständlich ?
+                    <br/>
+                    Was charakterisiert das entstehende Quantisierungsgeräusch und macht es besonders störend?
+                </em>
+
+                <h3>Musik_Detail_reduced-256.wav</h3>
+                <audio controls="controls" src="audio/Musik_Detail_reduced-256.wav">
+                    Your browser does not support the HTML5 Audio element.
+                </audio>
+                <img src="img/Musik_Detail_reduced-256_gram.jpg">
+
+                <p>Bei der Musik tritt bei einer Reduktion um 8 Bit eine deutliche Verschlechterung der Qualität
+                    auf.</p>
+
+                <h3>Sprache_Detail_reduced-64.wav</h3>
+                <audio controls="controls" src="audio/Sprache_Detail_reduced-64.wav">
+                    Your browser does not support the HTML5 Audio element.
+                </audio>
+                <img src="img/Sprache_Detail_reduced-64_gram.jpg">
+
+                <p>Bei der Sprache tritt bei einer Reduktion um 6 Bit eine deutliche Verschlechterung der Qualität
+                    auf.</p>
+                <p>
+                    Das Quantisierungsgeräusch äußert sich in einem permanenten Hintergrundrauschen.
+                </p>
+            </div>
+            <div id="collapse3_4">
+                <h2>Aufgabe 3.4</h2>
+                <h4>Code-Anpassungen</h4>
+                    <pre>
+    for (i = 0; i < (n_wave/2); i++) {
+        wave[i] = wave[i*2];
+    }
+    freq_in /= 2;
+    n_wave /= 2;
+                    </pre>
             </div>
         </div>
     </div>
+</div>
+</div>
 </div>
 </body>
 </html>
