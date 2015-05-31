@@ -140,15 +140,15 @@
                     </tr>
                     <tr>
                         <td>samples</td>
-                        <td>Abtastfrequenz - entspricht der Dauer</td>
+                        <td>Anzahl der Samples</td>
                     </tr>
                     <tr>
                         <td>rate</td>
-                        <td>Die Abtastrate in Hz</td>
+                        <td>Abtastfrequenz</td>
                     </tr>
                     <tr>
                         <td>bits</td>
-                        <td>Die Größe der Frames für das Signal</td>
+                        <td>Auflösung</td>
                     </tr>
                     <tr>
                         <td>bytes per sample</td>
@@ -179,7 +179,9 @@
                                     <ul class="nav navbar-nav">
                                         <li><a href="#collapse2_1">2.1 WAV to ASCII</a></li>
                                         <li><a href="#collapse2_2">2.2 Abtasttheorem</a></li>
-                                        <li><a href="#collapse2_3">2.3 & 2.4 Down-Sampling</a></li>
+                                        <li><a href="#collapse2_3">2.3 Down-Sampling</a></li>
+                                        <li><a href="#collapse2_4">2.4 Down-Sampling</a></li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -332,7 +334,7 @@
                     </div>
                     <div id="collapse2_3">
 
-                        <h2>Aufgabe 2.3 & 2.4</h2>
+                        <h2>Aufgabe 2.3</h2>
                         <em>
                             Bei herkömmlichen Soundkarten tritt systembedingt kein Aliasing auf, weil das Audiosignal
                             stets geeignet vorbehandelt wird (wie ?). Mit einem kleinen Trick läßt sich Aliasing jedoch
@@ -340,7 +342,15 @@
                             WAV-Datei z.B. jeden zweiten Abtastwert wegwirft. Man erhält so eine Wellenform, die genau
                             die Hälfte der ursprünglichen Abtastfrequenz aufweist. Wenn man das Signal nicht vorher
                             bandbegrenzt hat, können Aliasing-Verzerrungen hörbar werden.
-                            <br>
+                        </em>
+                        <p>
+                            Bei herkömmlichen Soundkarten wird das Signal durch einen Tiefpassfilter bearbeitet, sodass alle Frequenzen > f(max)/2 abgetrennt werden.
+                        </p>
+                    </div>
+                    <div id="collapse2_4">
+
+                        <h2>Aufgabe 2.4</h2>
+                        <em>
                             Modifiziere wave_io dahingehend, dass vom eingelesenen Signal jeder zweite Abtastwert
                             verworfen wird und das resultierende Signal abgespeichert wird. Der Header muß natürlich
                             entsprechend verändert werden! Wende das resultierende Programm zunächst auf 'sine_lo.wav'
