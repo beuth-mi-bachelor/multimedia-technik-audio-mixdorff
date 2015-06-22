@@ -8,3 +8,7 @@ img {
 p {
     padding: 5px;
 }
+
+.download-file {
+    display: block;
+}
