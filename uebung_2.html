@@ -726,9 +726,6 @@
                 </a>
             </h3>
         </div>
-        <!--
-        TODO: Fall A und B gibt es angeblich!
-        -->
         <div id="collapseTwo" class="panel-collapse collapse">
             <div class="panel-body">
                 <h2>Schwebung</h2>
@@ -736,23 +733,41 @@
                     Nun bringen wir einen zweiten Oszillator zum Einsatz. Um die Ausgänge der beiden Oszillatoren anschließen und in der Lautstärke regeln zu können, benötigen wir eine Mixing Matrix 2x2, von der wir allerdings den zweiten Ausgang löschen können. Zunächst stellen wir beide Oszillatoren auf exakt dieselbe Frequenz und Dreiecksschwingung. Dann verstimmen wir den zweiten gegen den ersten und zeichnen den Klang auf, wenn wir gerade eine Amplitudenmodulation feststellen (Fall A), d.h. einen in der Lautstärke schwankenden Ton. Wir verstimmen die Oszillatoren weiter gegeneinander, bis wir den Eindruck einer Dissonanz haben (Fall B), d.h. es entsteht ein rauher, unangenehmer Klang. Beachte, dass der Regler 'Pitch' den betreffenden Oszillator in etwa um Halbtöne verstimmt, während 'Fine' dies um Bruchteile von Halbtöne tut. Am besten experimentiert man zunächst mit dem 'Fine'-Regler und erst, wenn z.B. bei Fall B sich der gewünschte Effekt nicht einstellt, mit dem 'Pitch'-Regler. Nun stellen wir mit GRAM für die beiden Fälle die Frequenzen der Schwingungen fest. Es kann sein, dass die Genauigkeit von GRAM beim Fall A zur Bestimmung der Differenzfrequenz nicht ausreicht. Man kann die Differenzfrequenz aber auch aus dem Oszillogramm der amplitudenmodulierten Schwingung berechnen (z.B. in Samplitude anschauen). Die Periodendauer entspricht nämlich exakt dem Abstand zwischen zwei Punkten maximaler (oder minimaler) Amplitude. Ins Protokoll für beide Fälle: Mittenfrequenz und Differenzfrequenz, Spektrogramm und wav.
                 </em>
                 <div class="col-sm-12">
-                    <h3>Schwebung.wav</h3>
-                    <audio controls="controls" src="audio/u2/schwebung.wav">
+                    <h3>Amplitudenmodulation</h3>
+                    <audio controls="controls" src="audio/u2/schwebung-a.wav">
                         Your browser does not support the HTML5 Audio element.
                     </audio>
                     <figure>
-                        <img src="img/u2/schwebung.jpg">
+                        <img src="img/u2/schwebung-a.jpg">
                         <p>Abbildung: Schwebung Messung</p>
                     </figure>
+                    <p>
+                        <b>Messungen A:</b><br/>
+                        Amplitude 1: 134 Hz<br/>
+                        Amplitude 2: 135 Hz<br/>
+                        <br/>
+                        <b>Mittenfrequenz:</b> (134 + 135) / 2 = 134,5<br/>
+                        <b>Differenzfrequenz:</b> 135 - 134 = 1
+                    </p>
                 </div>
-                <p>
-                    <b>Messungen:</b><br/>
-                    Amplitude 1: 134 Hz<br/>
-                    Amplitude 2: 142 Hz<br/>
-                    <br/>
-                    <b>Mittenfrequenz:</b> (134 + 142) / 2 = 138<br/>
-                    <b>Differenzfrequenz:</b> 142 - 134 = 8
-                </p>
+                <div class="col-sm-12">
+                    <h3>Dissonanz</h3>
+                    <audio controls="controls" src="audio/u2/schwebung-b.wav">
+                        Your browser does not support the HTML5 Audio element.
+                    </audio>
+                    <figure>
+                        <img src="img/u2/schwebung-b.jpg">
+                        <p>Abbildung: Schwebung Messung</p>
+                    </figure>
+                    <p>
+                        <b>Messungen B:</b><br/>
+                        Amplitude 1: 134 Hz<br/>
+                        Amplitude 2: 142 Hz<br/>
+                        <br/>
+                        <b>Mittenfrequenz:</b> (134 + 142) / 2 = 138<br/>
+                        <b>Differenzfrequenz:</b> 142 - 134 = 8
+                    </p>
+                </div>
             </div>
         </div>
         <div class="panel-heading">
