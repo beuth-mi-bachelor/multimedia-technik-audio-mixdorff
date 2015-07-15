@@ -58,9 +58,14 @@
                 </em>
 <h4>Modifizierter Code</h4>
 <pre>
+    db_factor3db = 1.4125; // 3dB = 10^(3/20)
+    db_factor6db = 1.9952; // 6dB = 10^(6/20)
+    db_factor9db = 2.8184; // 9dB = 10^(9/20)
+    db_factor12db = 3.9811; // 12dB = 10^(12/20)
+
     new_wave = (short*)malloc(n_wave*sizeof(short));
-    for(i=0; i < n_wave; i++ {
-        float temp = wave[i] * 2 * sqrt(2);
+    for(i=0; i < n_wave; i++) {
+        float temp = wave[i] * db_factor3db;
         if (temp > 32767) {
             wave[i] = 32767;
         } else if (temp < -32768) {
@@ -70,13 +75,17 @@
         }
     }
 </pre>
-                <!-- TODO: Daten eintragen -->
-                <h4>Musik: Verstärkung um XXX dB</h4>
-                <figure>
-                    <img src="http://dummyimage.com/993x559">
-                    <p>Abbildung: Bei einer Verstärkung um XXX dB ist die Verzerrung wahrnehmbar und es tritt Clipping auf.</p>
-                </figure>
-
+                <h4>Musik: Verstärkung um 6 dB</h4>
+                <div class="col-sm-12">
+                    Wie aus dem Screenshot aus Audacity ersichtlich, tritt bereits ab 3dB Verstärkung Clipping auf. Hörbar ist es aber erst ab 6dB.
+                    <audio controls="controls" src="audio/u3/Musik_Detail_6dB.wav">
+                        Your browser does not support the HTML5 Audio element.
+                    </audio>
+                    <figure>
+                        <img src="img/u3/clipping.jpg">
+                        <p>Abbildung: Bei einer Verstärkung um 6 dB ist die Verzerrung wahrnehmbar. Ab 3dB tritt Clipping auf.</p>
+                    </figure>
+                </div>
                 <h4>Sinus 1kHz Verstärkungen</h4>
                 <div class="col-sm-12">
                     <h5>0dB Verstärkung</h5>
