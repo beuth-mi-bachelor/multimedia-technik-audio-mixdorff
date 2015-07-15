@@ -309,7 +309,45 @@
                     das alle Frequenzen enthält. Wenn wir nun das Original-Spektrum (oben) mit den gefilterten vergleichen, sollte sich ein Bild wie in der Mitte und unten ergeben, anderenfalls ist etwas mit dem Programm nicht in Ordnung (welcher Output von welchem Filter stammt, wird nicht verraten ! Das müßt Ihr selber herausfinden.) Um eine Glättung des Spektrums zu erzielen, bei GRAM 'Spectrum Average' auf 100 setzen. (Plots der eigenen Spektren ins Protokoll !)
                     <br/><br/>
                 </em>
-
+                <pre>
+     for (i = 0; i < n_wave; i++) {
+		//Tiefpass
+		float temp = 0.5*wave[i] + 0.45*wave[i - 1];
+		//Hochpass
+		//float temp =0.5*wave[i] - 0.45*wave[i-1];
+		wave[i] = (short)temp;
+	 }
+                </pre>
+                <div class="col-sm-12">
+                    <h5>Weisses Rauschen</h5>
+                    <audio controls="controls" src="audio/u3/weisses_rauschen.wav">
+                        Your browser does not support the HTML5 Audio element.
+                    </audio>
+                    <figure>
+                        <img src="img/u3/weisses_rauschen.jpg">
+                        <p>Abbildung: Weisses Rauschen</p>
+                    </figure>
+                </div>
+                <div class="col-sm-12">
+                    <h5>Tiefpass</h5>
+                    <audio controls="controls" src="audio/u3/tiefpass.wav">
+                        Your browser does not support the HTML5 Audio element.
+                    </audio>
+                    <figure>
+                        <img src="img/u3/tiefpass.jpg">
+                        <p>Abbildung: Tiefpass</p>
+                    </figure>
+                </div>
+                <div class="col-sm-12">
+                    <h5>Hochpass</h5>
+                    <audio controls="controls" src="audio/u3/hochpass.wav">
+                        Your browser does not support the HTML5 Audio element.
+                    </audio>
+                    <figure>
+                        <img src="img/u3/hochpass.jpg">
+                        <p>Abbildung: Hochpass</p>
+                    </figure>
+                </div>
             </div>
         </div>
     </div>
