@@ -228,6 +228,64 @@
                     Ein wichtiger Effekt in der Studiotechnik ist das Echo. Dabei wird zu einem Signal eine zeitverzögerte und in der Amplitude gedämpfte Überlagerung hinzugemischt: y(k)=x(k)+a*x(k-T), wobei T eine ganze Zahl zwischen 1 und N sein kann. Wir wollen WAVE_IO so modifieren, daß wir eine Verzögerung von 10 bzw 200 ms erreichen. Um wieviele Abtastwerte müssen wir verzögern, wenn wir mit einer Abtastrate von 44.1 kHz arbeiten ? Wir setzen a auf 0.6. Wende das Echo auf ein Sprach- und ein Musiksignal an. Es kann sein, dass die 10ms nur bei einem recht trockenen Soundfile wie der Sprachaufnahme hörbar werden (Waves original und mit Echo, Programm-Source ins Protokoll). Hinweis: Bei Stereodateien müssen wir berücksichtigen, daß linker und rechter Kanal getrennt verzögert werden müssen. Die Samples für links und rechts liegen im Array wave jeweils hintereinander.
                     <br/><br/>
                 </em>
+                <h4>Modifizierter Code</h4>
+   <pre>
+    n = 0.01 * freq_in; // 10ms
+    //n = 0.2 * freq_in; // 200ms
+    a = 0.6;
+
+    new_wave = malloc(n_wave * sizeof(short));
+    for (i = 0; i < n_wave; i++) {
+        if (i >= n) {
+            new_wave[i] = 0.5 * wave[i] + (short)((float)(wave[i - n]) *a);
+        }
+        else {
+            new_wave[i] = wave[i];
+        }
+    }
+     </pre>
+                <p>
+                    Das n steht für die Anzahl der Verzögerungsglieder und das a für den Faktor des Echos.
+                    Wir addieren auf das Original das Echo (16 Bit + 16 Bit = 32 Bit).
+                    Um eine Übersteuerung zu vermeiden multiplizieren wir mit 0.5.
+                </p>
+                <div class="col-sm-12">
+                    <h5>Musik: 0ms</h5>
+                    <audio controls="controls" src="audio/u3/Musik_Detail.wav">
+                        Your browser does not support the HTML5 Audio element.
+                    </audio>
+                </div>
+                <div class="col-sm-12">
+                    <h5>Musik: 10ms</h5>
+                    <audio controls="controls" src="audio/u3/Musik_Detail_10ms.wav">
+                        Your browser does not support the HTML5 Audio element.
+                    </audio>
+                </div>
+                <div class="col-sm-12">
+                    <h5>Musik: 200ms</h5>
+                    <audio controls="controls" src="audio/u3/Musik_Detail_200ms.wav">
+                        Your browser does not support the HTML5 Audio element.
+                    </audio>
+                </div>
+
+                <div class="col-sm-12">
+                    <h5>Sprache: 0ms</h5>
+                    <audio controls="controls" src="audio/u3/Sprache_Detail.wav">
+                        Your browser does not support the HTML5 Audio element.
+                    </audio>
+                </div>
+                <div class="col-sm-12">
+                    <h5>Sprache: 10ms</h5>
+                    <audio controls="controls" src="audio/u3/Sprache_Detail_10ms.wav">
+                        Your browser does not support the HTML5 Audio element.
+                    </audio>
+                </div>
+                <div class="col-sm-12">
+                    <h5>Sprache: 200ms</h5>
+                    <audio controls="controls" src="audio/u3/Sprache_Detail_200ms.wav">
+                        Your browser does not support the HTML5 Audio element.
+                    </audio>
+                </div>
 
             </div>
         </div>
