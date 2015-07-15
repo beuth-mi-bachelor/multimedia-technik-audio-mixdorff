@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Multimediatechnik MMT (Audio) Übungen</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Multimediatechnik MMT (Audio)</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Übung 1</a></li>
+                <li><a href="uebung_2.html">Übung 2</a></li>
+                <li class="active"><a href="uebung_3.html">Übung 3</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="accordion" class="container panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne"
+                   href="#collapseOne">
+                    Aufgabe 1 - Klirrfaktor
+                </a>
+            </h3>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse">
+            <div class="panel-body">
+                <h2>Klirrfaktor</h2>
+                <em>
+                    Als erstes wollen wir ein vorhandenes Wavefile in der Lautstärke anheben. Dies realisiert man durch Multiplikation jedes Abtastwertes mit einem konstanten Faktor, d.h. mit einem Multiplizierer. Zunächst wollen wir das Musicfile aus der 1. Übung um 3, 6 und 9 dB verstärken. Dabei wird es bei hoher Verstärkung zwangsläufig zu einem sogenannten Clipping kommen: Das Produkt aus der Originalamplitude und dem Verstärkungsfaktor ist betragsmäßig größer als der maximal darstellbare Amplitudenwert, d.h. bei 16 bit < -32768 bzw. > 32767. In diesem Fall muß dafür gesorgt werden, daß der resultierende Wert auf genau -32768, bzw. 32767 gesetzt wird. Clipping ist akustisch als immer stärker werdende nichtlineare Verzerrung wahrnehmbar.
+                    <br/>
+                    Bei welcher Verstärkung wird eine Verzerrung beim gewählten Soundfile wahrnehmbar? (Source-Ausschnitt, wave und Ausschnitt mit geclippten Bereichen ins Protokoll).
+                    <br/>
+                    Ein Maß für die Verzerrung ist der sogenannte Klirrfaktor k, der für eine periodische Schwingung folgendermaßen definiert ist:
+                    <br/>
+                    k=Effektivwert ohne Grundton/Effektivwert mit Grundton. Der Klirrfaktor läßt sich aus dem Spektrum berechnen. Wir wollen nun eine 1kHz-Sinusschwingung um 6, 9 und 12 dB verstärken und den resultierenden Klirrfaktor berechnen (Spektrogramm des Ausgangsignals mit GRAM berechnen, Plot ins Protokoll).
+                    <br/>
+                    <a href="http://public.beuth-hochschule.de/~mixdorff/mmt1/files/sine_1k.wav" target="_blank">Sinus 1kHz</a>
+                    <br/>
+                    Den Effektivwert ohne/mit Grundton einer harmonischen Schwingung berechnet man, indem man die auf die Grundton bezogenen Amplituden der Obertöne quadriert, addiert und aus dem Resultat die Wurzel zieht:
+                    Effektivwert_gesamt_mit_Grundton = sqrt( Effektivwert_F0**2 + Effektivwert_2F0**2 + Effektivwert_3F0**2 + ...)
+                    <br/>
+                    Dazu muß man die dB-Angaben aus GRAM in lineare Angaben zurückrechnen (siehe Aufgabe 2.1).
+                    <br/><br/>
+                </em>
+<h4>Modifizierter Code</h4>
+<pre>
+    new_wave = (short*)malloc(n_wave*sizeof(short));
+    for(i=0; i < n_wave; i++ {
+        float temp = wave[i] * 2 * sqrt(2);
+        if (temp > 32767) {
+            wave[i] = 32767;
+        } else if (temp < -32768) {
+            wave[i] = -32768;
+        } else {
+            wave[i] = (short)temp;
+        }
+    }
+</pre>
+                <!-- TODO: Daten eintragen -->
+                <h4>Musik: Verstärkung um XXX dB</h4>
+                <figure>
+                    <img src="http://dummyimage.com/993x559">
+                    <p>Abbildung: Bei einer Verstärkung um XXX dB ist die Verzerrung wahrnehmbar und es tritt Clipping auf.</p>
+                </figure>
+
+                <h4>Sinus 1kHz Verstärkungen</h4>
+                <div class="col-sm-12">
+                    <h5>0dB Verstärkung</h5>
+                    <audio controls="controls" src="audio/u3/sine_1k_0dB.wav">
+                        Your browser does not support the HTML5 Audio element.
+                    </audio>
+                    <figure>
+                        <img src="img/u3/sine_1k_0dB_thumb.jpg">
+                        <p>Abbildung: Verstärkung von Sinus 1kHz mit 0dB</p>
+                    </figure>
+                </div>
+                <div class="col-sm-12">
+                    <h5>6dB Verstärkung</h5>
+                    <audio controls="controls" src="audio/u3/sine_1k_6dB.wav">
+                        Your browser does not support the HTML5 Audio element.
+                    </audio>
+                    <figure>
+                        <img src="img/u3/sine_1k_6dB_thumb.jpg">
+                        <p>Abbildung: Verstärkung von Sinus 1kHz mit 6dB</p>
+                    </figure>
+                </div>
+                <div class="col-sm-12">
+                    <h5>9dB Verstärkung</h5>
+                    <audio controls="controls" src="audio/u3/sine_1k_9dB.wav">
+                        Your browser does not support the HTML5 Audio element.
+                    </audio>
+                    <figure>
+                        <img src="img/u3/sine_1k_9dB_thumb.jpg">
+                        <p>Abbildung: Verstärkung von Sinus 1kHz mit 9dB</p>
+                    </figure>
+                </div>
+                <div class="col-sm-12">
+                    <h5>12dB Verstärkung</h5>
+                    <audio controls="controls" src="audio/u3/sine_1k_12dB.wav">
+                        Your browser does not support the HTML5 Audio element.
+                    </audio>
+                    <figure>
+                        <img src="img/u3/sine_1k_12dB_thumb.jpg">
+                        <p>Abbildung: Verstärkung von Sinus 1kHz mit 12dB</p>
+                    </figure>
+                </div>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>
+                            Frequenz (Hz)
+                        </th>
+                        <th>
+                            Lautstärke (dB)
+                        </th>
+                        <th>
+                            Oberwelle (dB)
+                        </th>
+                        <th>
+                            Prozent (%)
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            1000
+                        </td>
+                        <td>
+                            -3,5
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            3000
+                        </td>
+                        <td>
+                            -18
+                        </td>
+                        <td>
+                            -14,5
+                        </td>
+                        <td>
+                            ca. 19
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            5000
+                        </td>
+                        <td>
+                            -36
+                        </td>
+                        <td>
+                            -32.5
+                        </td>
+                        <td>
+                            ca. 2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            7000
+                        </td>
+                        <td>
+                            -47
+                        </td>
+                        <td>
+                            -43,5
+                        </td>
+                        <td>
+                            ca. 1
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p class="lead">
+                    Berechnung des Klirrfaktors (allgemein):<br/>
+                    Klirrfaktor k = (Effektivwert_ohne_Grundton) / (Effektivwert_mit_Grundton) <br/>
+                    Effektivwert = sqrt(Effektivwert_1F0<sup>2</sup> + Effektivwert_2F0<sup>2</sup> + Effektivwert_3F0<sup>2</sup> + ...)<br/>
+                    <br/>
+                    Berechnung unseres Klirrfaktors:<br/>
+                    Klirrfaktor k = sqrt ((0,1882<sup>2</sup> + 0,0232<sup>2</sup> + 0,0007<sup>2</sup>)/ (1<sup>2</sup> + 0,1882<sup>2</sup> + 0,0232<sup>2</sup> + 0,0007<sup>2</sup>)) = 0,1863
+                </p>
+                </div>
+        </div>
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo"
+                   href="#collapseTwo">
+                    Aufgabe 2 - Echo
+                </a>
+            </h3>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body">
+                <h2>Echo</h2>
+                <em>
+                    Ein wichtiger Effekt in der Studiotechnik ist das Echo. Dabei wird zu einem Signal eine zeitverzögerte und in der Amplitude gedämpfte Überlagerung hinzugemischt: y(k)=x(k)+a*x(k-T), wobei T eine ganze Zahl zwischen 1 und N sein kann. Wir wollen WAVE_IO so modifieren, daß wir eine Verzögerung von 10 bzw 200 ms erreichen. Um wieviele Abtastwerte müssen wir verzögern, wenn wir mit einer Abtastrate von 44.1 kHz arbeiten ? Wir setzen a auf 0.6. Wende das Echo auf ein Sprach- und ein Musiksignal an. Es kann sein, dass die 10ms nur bei einem recht trockenen Soundfile wie der Sprachaufnahme hörbar werden (Waves original und mit Echo, Programm-Source ins Protokoll). Hinweis: Bei Stereodateien müssen wir berücksichtigen, daß linker und rechter Kanal getrennt verzögert werden müssen. Die Samples für links und rechts liegen im Array wave jeweils hintereinander.
+                    <br/><br/>
+                </em>
+
+            </div>
+        </div>
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree"
+                   href="#collapseThree">
+                    Aufgabe 3 - Einfacher Filter
+                </a>
+            </h3>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse">
+            <div class="panel-body">
+                <h2>Einfacher Filter</h2>
+                <em>
+                    Ein sehr einfaches Filter kann man z.B. mit der Zuordnungsvorschrift (a) y(k)=0.5*x(k)+0.45*x(k-1) realisieren. Programmiere das Filter und vergleiche eine Musicdatei vor und nach der Filterung. Tue dasselbe mit der Zuordnungsvorschrift (b)
+                    <br/>
+                    y(k) = 0.5 * x(k) - 0.45 * x(k-1). Um was für eine Art Filter handelt es sich jeweils ? (waves Original, Filter a) und b) ins Protokoll)
+                    <br/>
+                    Zum Testen unserer Filter verwenden wir <a href="http://public.beuth-hochschule.de/~mixdorff/mmt1/files/Noise.wav" target="_blank">Weißes Rauschen</a><br/>
+                    das alle Frequenzen enthält. Wenn wir nun das Original-Spektrum (oben) mit den gefilterten vergleichen, sollte sich ein Bild wie in der Mitte und unten ergeben, anderenfalls ist etwas mit dem Programm nicht in Ordnung (welcher Output von welchem Filter stammt, wird nicht verraten ! Das müßt Ihr selber herausfinden.) Um eine Glättung des Spektrums zu erzielen, bei GRAM 'Spectrum Average' auf 100 setzen. (Plots der eigenen Spektren ins Protokoll !)
+                    <br/><br/>
+                </em>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
